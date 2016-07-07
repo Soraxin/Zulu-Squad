@@ -35,11 +35,22 @@ function runSplash(deltaTime)
 
 function runGame(deltaTime)
 {
-	for(var y=0; y<22; y++)
+	scrollingTime += scrollingSpeed * deltaTime;
+	
+	for(var y=0; y<backgroundCountHeight; y++)
 	{
-		for(var x=0; x<30; x++)
+		var yPos = y * 32 + scrollingTime;
+		var countWrapping = 0;
+		while(yPos > SCREEN_HEIGHT)
 		{
-			context.drawImage(background[y][x], x*32,y*32)
+			yPos -= SCREEN_HEIGHT;
+			++countWrapping;
+		}
+		yPos -= countWrapping * 32;
+		
+		for(var x=0; x<backgroundCountWidth; x++)
+		{
+			context.drawImage(background[y][x], x*32,yPos)
 		}
 	}
 	
