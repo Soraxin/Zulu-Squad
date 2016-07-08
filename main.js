@@ -28,14 +28,15 @@ function runSplash(deltaTime)
         return;
     }
     
-    context.fillStyle = "#7FE81C";
+    context.fillStyle = "#3399ff";
     context.font="84px Imapct";
-    context.fillText("Zulu Squad", 270, 340);
+    context.fillText("Zulu Squad", 180, 340);
 }
 
 function runGame(deltaTime)
 {
-	scrollingTime += scrollingSpeed * deltaTime;
+	scrollingTime += scrollingSpeed * (12 * deltaTime)
+    ;
 	
 	for(var y=0; y<backgroundCountHeight; y++)
 	{
@@ -54,11 +55,11 @@ function runGame(deltaTime)
 		}
 	}
 	
-	context.fillStyle = "#7FE81C";
+	context.fillStyle = "#ffffff";
     context.font="30px Imapct";
     context.fillText("Score", 10, 30);
 	
-	context.fillStyle = "#7FE81C";
+	context.fillStyle = "#ffffff";
     context.font="30px Imapct";
     context.fillText(gameScore, 30, 60);
 	
@@ -169,21 +170,21 @@ function runGame(deltaTime)
 
 function runGameOver(deltaTime)
 {
-	context.fillStyle = "#7FE81C";
+	context.fillStyle = "#3399ff";
     context.font="54px Imapct";
-    context.fillText("GAME OVER!", 350, 300)
+    context.fillText("GAME OVER!", 200, 300)
 	
-	context.fillStyle = "#7FE81C";
+	context.fillStyle = "#3399ff";
     context.font="35px Imapct";
-    context.fillText("Press ENTER to play again", 320, 380)
+    context.fillText("Press ENTER to play again", 170, 380)
 	
-	context.fillStyle = "#7FE81C";
+	context.fillStyle = "#3399ff";
     context.font="35px Imapct";
-    context.fillText("Your score - ", 400, 460)
+    context.fillText("Your score - ", 250, 460)
 	
-	context.fillStyle = "#7FE81C";
+	context.fillStyle = "#3399ff";
     context.font="35px Imapct";
-    context.fillText(gameScore, 580, 460);
+    context.fillText(gameScore, 430, 460);
 }
 
 function run()
